@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"log"
+	"os"
 	"sort"
 	"strconv"
 	"strings"
@@ -115,7 +117,7 @@ func ProcessGradesFromFile(filePath string) (map[string]*SubjectGradeData, error
 	}
 
 	if processedGradesCount == 0 {
-		return nil, fmt.Errorf("no valid grade data found to process from the Excel file. Make sure your 'Předmět', 'Váha' and 'Výsledek' columns contain valid numeric entries")
+		return nil, fmt.Errorf("No valid grade data found to process from the Excel file. Make sure your 'Předmět', 'Váha' and 'Výsledek' columns contain valid numeric entries")
 	}
 
 	for _, data := range subjectGrades {
@@ -135,11 +137,16 @@ func main() {
 
 	subjectAverages, err := ProcessGradesFromFile(inputFilePath)
 	if err != nil {
-		log.Fatalf("Error processing grades: %v", err)
+		fmt.Printf("Error processing grades: %v\n", err)
+		fmt.Println("\nPress Enter to exit...")
+		bufio.NewReader(os.Stdin).ReadString('\n')
+		return
 	}
 
 	if len(subjectAverages) == 0 {
 		fmt.Println("No subject averages could be calculated from the provided data.")
+		fmt.Println("\nPress Enter to exit...")
+		bufio.NewReader(os.Stdin).ReadString('\n')
 		return
 	}
 
@@ -155,4 +162,7 @@ func main() {
 		data := subjectAverages[subject]
 		fmt.Printf("%s: %.3f\n", subject, data.Average)
 	}
+
+	fmt.Println("\nPress Enter to exit...")
+	bufio.NewReader(os.Stdin).ReadString('\n')
 }

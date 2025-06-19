@@ -2,8 +2,6 @@
 
 This is a simple Go project that calculates your average grades for each subject (with weights) from an Excel file exported from Škola Online.
 
-This project was created with the help of AI and is being released publicly to help others save time.
-
 ## Features
 
 - Calculates weighted average grades for each subject
@@ -12,13 +10,12 @@ This project was created with the help of AI and is being released publicly to h
 
 ## How to Use
 
-1. **Install Go** if you haven't already: [Download Go](https://golang.org/dl/)
-2. **Download this repository** as a ZIP and extract all files.
-3. **Log in to Škola Online**.
-4. Navigate to `Hodnocení` → `Výpisy hodnocení` → `Průběžné hodnocení`.
-5. Click the **XLS** button at the bottom of the page to download your grades as an Excel file.
-6. **Move the downloaded Excel file** into the root directory of this project (where `main.go` is located).
-7. **Run** the project by double-clicking the `run-project.bat` file.
+1. **Download the compiled program** from [here](https://github.com/8BiToe/skolaonline-average-grade-for-each-subject/blob/main/generated-programs/).
+2. **Log in to Škola Online**.
+3. Navigate to `Hodnocení` → `Výpisy hodnocení` → `Průběžné hodnocení`.
+4. Click the **XLS** button at the bottom of the page to download your grades as an Excel file.
+5. Move the file to the same folder as the program.
+6. **Run** the program.
 
 ## Story
 
